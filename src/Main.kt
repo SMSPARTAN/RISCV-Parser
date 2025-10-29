@@ -4,6 +4,9 @@ import parser.RiscVParser
 import util.FileManager
 import java.io.File
 
+/**
+ * @author Samuel Sarno de Almeida, Lucas André Alexandre
+ */
 fun main(argv: Array<String>) {
   if (argv.isEmpty()) {
     println("Usage: java -jar riscv-parser.jar <input_file> [output_prefix]")

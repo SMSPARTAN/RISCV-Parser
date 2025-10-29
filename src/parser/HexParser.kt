@@ -2,6 +2,9 @@ package parser
 
 import model.Instruction
 
+/**
+ * Parseia linhas hex para um string binário 32-bit
+ */
 object HexParser {
   fun hexToBin(hexLine: String): String {
     val cleanHex = hexLine.trim()

@@ -2,6 +2,9 @@ package util
 
 import java.io.File
 
+/**
+ * Lê as linhas de um arquivo e as armazena em um [MutableList]
+ */
 object FileManager {
   /**
    *  Lê as linhas e as armazena no vetor `lineList`

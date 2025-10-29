@@ -7,6 +7,9 @@ interface HazardResolver {
   fun resolve(instructions: List<Instruction>): Pair<List<Instruction>, Int>
 }
 
+/**
+ * Resolve conflitos sem forwarding
+ */
 class DataHazardResolverWithoutForwarding : HazardResolver {
 
   override fun resolve(instructions: List<Instruction>): Pair<List<Instruction>, Int> {
@@ -39,6 +42,9 @@ class DataHazardResolverWithoutForwarding : HazardResolver {
   }
 }
 
+/**
+ * Resolve conflitos com forwarding
+ */
 class DataHazardResolverWithForwarding : HazardResolver {
 
   override fun resolve(instructions: List<Instruction>): Pair<List<Instruction>, Int> {
@@ -67,6 +73,9 @@ class DataHazardResolverWithForwarding : HazardResolver {
   }
 }
 
+/**
+ * Controla o resolvimento de conflitos
+ */
 class ControlHazardResolver : HazardResolver {
 
   override fun resolve(instructions: List<Instruction>): Pair<List<Instruction>, Int> {

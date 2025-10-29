@@ -2,6 +2,9 @@ package parser
 
 import model.Instruction
 
+/**
+ * Controla o parseamento das linhas e guarda as instruções
+ */
 class RiscVParser {
   val instructions: MutableList<Instruction> = mutableListOf()
 

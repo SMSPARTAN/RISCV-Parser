@@ -2,6 +2,9 @@ package hazard
 
 import model.Instruction
 
+/**
+ * Detecta conflitos nas instruções
+ */
 class HazardDetector {
 
   // Data hazard detection without forwarding

@@ -7,6 +7,9 @@ import parser.BinaryParser.buildR
 import parser.BinaryParser.buildS
 import parser.BinaryParser.buildU
 
+/**
+ * Contêm os OPCODEs para os diversos tipos de instruções da ISA RISCV-32i
+ */
 enum class Opcode(
   val opcodes: Set<Int>,
   val builder: (UInt, String) -> Instruction

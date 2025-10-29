@@ -1,5 +1,8 @@
 package model
 
+/**
+ * Representa uma instrução RISCV-32i
+ */
 sealed class Instruction {
   abstract val rawBinary: String
   abstract fun summary(): String

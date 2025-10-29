@@ -2,6 +2,9 @@ package hazard
 
 import model.Instruction
 
+/**
+ * Calcula o overhead e o novo endereço de instruções à serem reordenadas
+ */
 class AddressRecalculator {
   fun recalculateAddresses(instructions: List<Instruction>): List<Pair<Int, Instruction>> {
     val result = mutableListOf<Pair<Int, Instruction>>()

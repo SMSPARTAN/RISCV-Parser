@@ -3,6 +3,9 @@ package parser
 import model.Instruction
 import model.Opcode
 
+/**
+ * Parseia uma string binária e define uma instrução RISCV-32i
+ */
 object BinaryParser {
   fun binToUInt(binline: String): UInt {
     var v = 0u
@@ -14,7 +17,7 @@ object BinaryParser {
     return v
   }
 
-  /* / Helper functions for bitwise */
+  // Helper functions for bitwise
   fun UInt.slice(offset: Int, length: Int): UInt =
     (this shr offset) and ((1u shl length) - 1u)
 
@@ -108,9 +111,11 @@ object BinaryParser {
     val bin = binToUInt(binline)
     val opcode = (bin and 0x7Fu).toInt()
 
-    // Pesquisa em model.Opcode por um enum correspondente à [opcode] e o atribui para fmt
-    // apos, usa-se fmt para invocar a operação de construção correspondente ao opcode
-    // retorna a instrução construída pelas funçoes build* ou um model.Instruction.Unknown caso ocorra algum erro
+    /**
+     * Pesquisa em model.Opcode por um enum correspondente à [opcode] e o atribui para fmt
+     * apos, usa-se fmt para invocar a operação de construção correspondente ao opcode
+     * retorna a instrução construída pelas funçoes build* ou um model.Instruction.Unknown caso ocorra algum erro
+     */
     val fmt = Opcode.entries.firstOrNull { opcode in it.opcodes }
     return fmt?.builder?.invoke(bin, binline) ?: Instruction.Unknown(binline)
   }
